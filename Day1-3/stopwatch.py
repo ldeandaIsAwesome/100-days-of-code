@@ -12,22 +12,25 @@ def end_time():
 
 def ellapsed_time(end, start):
     ellapsed = end - start
-    print(ellapsed.seconds)
     return ellapsed
 
 
 def main():
-    start_key = input("press any key to start the stopwatch: ")
-    start = start_time()
+    try:
+        start_key = input("press any key to start the stopwatch: ")
+        start = start_time()
 
-    end_key = input("press any key to end the stopwatch: ")
-    end = end_time()
+        end_key = input("press any key to end the stopwatch: ")
+        end = end_time()
 
-    stop = ellapsed_time(end, start)
-    minutes = int(stop.seconds / 60)
-    seconds = stop.seconds % 60
+        stop = ellapsed_time(end, start)
+        minutes = int(stop.seconds / 60)
+        seconds = stop.seconds % 60
 
-    print(f'The amount of time that passed is {minutes} minutes and {seconds} seconds')
+        print(f'The amount of time that passed in minutes:seconds is {minutes:02.0f}:{seconds:02.0f}')
+    except KeyboardInterrupt as k:
+        print("Stopwatch terminated early due to keyboard interrupt. Please rerun the program")
+
 
 if __name__ == "__main__":
     main()
