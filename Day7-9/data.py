@@ -1,3 +1,5 @@
+#!python3
+
 us_state_abbrev = {
     'Alabama': 'AL',
     'Alaska': 'AK',
